@@ -210,26 +210,42 @@ let riv = document.getElementById("Rivendell")
 // ============
 function forgeTheFellowShip() {
 	console.log('8: forgeTheFellowShip')
+
 	
+
 	const shire = document.getElementById("The-Shire")
 	let riv = document.getElementById("Rivendell")
-	//create a new div called `'the-fellowship'` within `rivendell`
+
 	let theFellowship = document.createElement("div")
 	theFellowship.setAttribute("id", "the-fellowship")
 	riv.appendChild(theFellowship);
+	let hobbitList = document.createElement("ul")
+	console.log(hobbitList)
+	for (let i = 0; i < hobbits.length; i++) {
+		let hobbitLi = document.createElement("li");
+		hobbitLi.innerText = hobbits[i];
+		hobbitList.appendChild(hobbitLi);
+	}
+	for (let i = 0; i < buddies.length; i++) {
+		let hobbitLi = document.createElement("li");
+		hobbitLi.innerText = buddies[i];
+		hobbitList.appendChild(hobbitLi);
+	}
+	alert("hobbits and buddies have joined your party!");
+	console.log(theFellowship)
+	console.log(hobbitList)
+	theFellowship.appendChild(hobbitList);
+	console.log(riv)
+}
+	
+	
+	//create a new div called `'the-fellowship'` within `rivendell`
+	
 	// add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
 	// after each character is added make an alert that they // have joined your party
 	
-	for(let i = 0; i < hobbits.length; i++) {
-	theFellowship.appendChild(document.createTextNode(hobbits[i]));
-	}
-	for (let i = 0; i < buddies.length; i++) {
-	theFellowship.appendChild(document.createTextNode(buddies[i]));
-	}
-	alert("hobbits and buddies have joined your party!");
-	
 	// NOTE: This won't change what you see in the browser.  Use your Elements tab of your Inspector tools to make sure that it worked.
-	}
+	
 
 
 // COMMIT YOUR WORK
@@ -245,11 +261,9 @@ function theBalrog() {
 	
 	// apply the following style to the element, make the // background 'white', add a grey border
 	let riv = document.getElementById("Rivendell");
-let gandalf = riv.querySelector("aside ul li");
+   let gandalf = riv.querySelector("aside ul li");
 
-gandalf.textContent = "Gandalf the white";
-gandalf.style.border = "3px solid gray"
-gandalf.style.backgroundColor = "white"
+
 }
 
 // COMMIT YOUR WORK
